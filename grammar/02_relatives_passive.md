@@ -8,32 +8,32 @@
 
 | 関係代名詞 | 使う対象 | 例 |
 |-----------|---------|-----|
-| **who** | 人 | The engineer **who** designed this chip is brilliant. |
-| **which** | もの・こと | The tool **which** we use is OpenROAD. |
-| **that** | 人・もの両方 | The bug **that** I found was critical. |
-| **whose** | 所有 | The designer **whose** code I reviewed left the company. |
-| **where** | 場所 | The lab **where** we test the chips is on the 3rd floor. |
+| **who** | 人 | The chef **who** made this dish is talented. |
+| **which** | もの・こと | The restaurant **which** we visited was fantastic. |
+| **that** | 人・もの両方 | The recipe **that** I found online was easy to follow. |
+| **whose** | 所有 | The neighbor **whose** dog I walk every morning is very kind. |
+| **where** | 場所 | The park **where** we jog every Sunday is near the river. |
 
 ### 制限用法 vs 非制限用法（カンマの有無）
 
 | 種類 | 例 | 意味 |
 |------|-----|------|
-| **制限用法** (カンマなし) | The report **that he wrote** was clear. | 「彼が書いた」レポート（他にもレポートがある中で特定） |
-| **非制限用法** (カンマあり) | The report, **which he wrote last week**, was clear. | レポートの補足情報（1つしかない前提） |
+| **制限用法** (カンマなし) | The book **that he recommended** was fascinating. | 「彼が勧めた」本（他にも本がある中で特定） |
+| **非制限用法** (カンマあり) | The book, **which he recommended last week**, was fascinating. | 本の補足情報（1つしかない前提） |
 
 **ルール:**
 - 非制限用法（カンマあり）では **that は使えない**
-- ✕ The CPU, that I designed, passed all tests.
-- ○ The CPU, **which** I designed, passed all tests.
+- ✕ Mt. Fuji, that I climbed last summer, was breathtaking.
+- ○ Mt. Fuji, **which** I climbed last summer, was breathtaking.
 
 ### 関係代名詞の省略
 
 **目的格**のとき省略できる:
-- The tool **(that/which)** we use is OpenROAD. → The tool we use is OpenROAD. ✓
-- The engineer **(who/that)** I met was helpful. → The engineer I met was helpful. ✓
+- The cake **(that/which)** she baked was delicious. → The cake she baked was delicious. ✓
+- The friend **(who/that)** I invited couldn't come. → The friend I invited couldn't come. ✓
 
 **主格**のときは省略できない:
-- The engineer **who** designed this → 省略不可 ✕
+- The student **who** passed the exam → 省略不可 ✕
 
 ---
 
@@ -41,14 +41,14 @@
 
 適切な関係代名詞を入れなさい（省略可能なら「省略可」と書く）。
 
-1. The register file _______ holds 32 entries is in the ID stage.
-2. The testbench _______ I wrote last night has a bug.
-3. She is the designer _______ pipeline CPU passed all riscv-tests.
-4. OpenROAD, _______ is open-source, supports the sky130 PDK.
-5. The lab _______ we run simulations is always cold.
-6. The constraint _______ we forgot to add caused a timing violation.
-7. He showed me the layout, _______ looked impressive.
-8. The signal _______ name I can't remember was causing the glitch.
+1. The suitcase _______ weighs over 20 kg needs to be checked in.
+2. The recipe _______ I found online turned out great.
+3. She is the teacher _______ class is always full.
+4. This coffee shop, _______ is near the station, has excellent pastries.
+5. The gym _______ we work out is open 24 hours.
+6. The umbrella _______ I forgot to bring was my favorite one.
+7. He showed me the garden, _______ looked beautiful in spring.
+8. The colleague _______ desk is next to mine is always cheerful.
 
 ---
 
@@ -61,26 +61,26 @@
 
 | 時制 | 能動態 | 受動態 |
 |------|--------|--------|
-| 現在 | They **use** OpenROAD. | OpenROAD **is used** by many teams. |
-| 過去 | She **designed** the chip. | The chip **was designed** by her. |
-| 現在完了 | We **have completed** the test. | The test **has been completed**. |
-| 未来 | They **will release** it. | It **will be released** next month. |
-| 進行形 | They **are testing** it. | It **is being tested** now. |
+| 現在 | They **use** this meeting room every day. | This meeting room **is used** every day. |
+| 過去 | She **painted** the picture. | The picture **was painted** by her. |
+| 現在完了 | We **have finished** the preparations. | The preparations **have been finished**. |
+| 未来 | They **will announce** the results. | The results **will be announced** tomorrow. |
+| 進行形 | They **are cleaning** the office. | The office **is being cleaned** now. |
 
 ### いつ受動態を使うか
 
-1. **誰がやったか重要じゃない**とき: "The chip **was fabricated** in TSMC's 5nm process."
-2. **結果やプロセスに焦点**を当てたいとき: "The data **is transferred** through the NoC."
-3. **技術文書・論文**では受動態が多い: "The algorithm **is implemented** in hardware."
+1. **誰がやったか重要じゃない**とき: "The bridge **was built** in the 19th century."
+2. **結果やプロセスに焦点**を当てたいとき: "The packages **are delivered** to your door."
+3. **ニュース・公式発表**では受動態が多い: "The event **has been postponed** until further notice."
 
 ### よくある形
 
 | パターン | 例 |
 |---------|-----|
-| It is said that... | **It is said that** this architecture is efficient. |
-| be known to... | Tenstorrent **is known to** use a dataflow architecture. |
-| be supposed to... | The test **is supposed to** pass. |
-| be expected to... | The clock frequency **is expected to** reach 1GHz. |
+| It is said that... | **It is said that** this town has the best seafood in the country. |
+| be known to... | This bakery **is known to** make the best croissants in town. |
+| be supposed to... | The package **is supposed to** arrive today. |
+| be expected to... | The new store **is expected to** open next spring. |
 
 ---
 
@@ -88,26 +88,26 @@
 
 能動態を受動態に書き換えなさい。
 
-1. The team designed the systolic array.
-2. We have not verified the timing constraints yet.
-3. They will manufacture the chip next year.
-4. Someone found a critical bug in the RTL.
-5. The engineers are reviewing the floorplan right now.
+1. The volunteers organized the charity event.
+2. We have not cleaned the kitchen yet.
+3. They will publish the magazine next month.
+4. Someone stole my bicycle from the parking lot.
+5. The staff are preparing the banquet hall right now.
 
 受動態を能動態に書き換えなさい。
 
-6. The signal was driven by the output buffer.
-7. The test results have been published on the wiki.
-8. The new architecture is being evaluated by the team.
+6. The goal was scored by the youngest player on the team.
+7. The concert tickets have been sold out online.
+8. The new menu is being tested by the head chef.
 
 適切な受動態の形に直しなさい。
 
-9. This tool (use) _______ by engineers worldwide.
-10. The report (write) _______ by her last week.
-11. The layout (not / complete) _______ yet.
-12. The chip (expect) _______ to tape out in Q3.
-13. All bugs (fix) _______ before the release.
-14. The data (transfer) _______ through the NoC right now.
+9. English (speak) _______ in many countries around the world.
+10. The letter (write) _______ by her last week.
+11. The laundry (not / fold) _______ yet.
+12. The flight (expect) _______ to arrive at 3 PM.
+13. All the homework (finish) _______ before dinner.
+14. The cake (decorate) _______ by the baker right now.
 
 ---
 
@@ -125,21 +125,21 @@
 
 ### 2-2
 能動態→受動態:
-1. The systolic array was designed by the team.
-2. The timing constraints have not been verified yet.
-3. The chip will be manufactured next year.
-4. A critical bug was found in the RTL.
-5. The floorplan is being reviewed by the engineers right now.
+1. The charity event was organized by the volunteers.
+2. The kitchen has not been cleaned yet.
+3. The magazine will be published next month.
+4. My bicycle was stolen from the parking lot.
+5. The banquet hall is being prepared by the staff right now.
 
 受動態→能動態:
-6. The output buffer drove the signal.
-7. They/Someone has published the test results on the wiki.
-8. The team is evaluating the new architecture.
+6. The youngest player on the team scored the goal.
+7. They/Someone has sold out the concert tickets online.
+8. The head chef is testing the new menu.
 
 空欄:
-9. is used
+9. is spoken
 10. was written
-11. has not been completed
+11. has not been folded
 12. is expected
-13. have been fixed (must be fixed も文脈による)
-14. is being transferred
+13. has been finished (must be finished も文脈による)
+14. is being decorated

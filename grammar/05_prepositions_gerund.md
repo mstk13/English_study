@@ -22,23 +22,23 @@
 | 前置詞 | 使う場面 | 例 |
 |--------|---------|-----|
 | **at** | 地点 | at the office, at the station |
-| **in** | 空間の中 | in the room, in Tokyo, in the pipeline |
-| **on** | 表面・上 | on the table, on the screen, on the board |
+| **in** | 空間の中 | in the room, in Tokyo, in the kitchen |
+| **on** | 表面・上 | on the table, on the screen, on the shelf |
 
-### 技術文脈で頻出の前置詞
+### 日常・ビジネス文脈で頻出の前置詞
 
 | 前置詞句 | 意味 | 例 |
 |---------|------|-----|
-| depend **on** | 〜に依存する | The frequency depends **on** the critical path. |
-| result **in** | 〜という結果になる | This change results **in** better timing. |
-| consist **of** | 〜から成る | The pipeline consists **of** 5 stages. |
-| lead **to** | 〜につながる | Higher utilization leads **to** more congestion. |
-| deal **with** | 〜を扱う | This module deals **with** memory access. |
-| focus **on** | 〜に焦点を当てる | We should focus **on** timing closure first. |
-| according **to** | 〜によると | According **to** the spec, the max frequency is 1GHz. |
-| due **to** | 〜が原因で | The failure was due **to** a setup violation. |
-| in terms **of** | 〜の観点で | In terms **of** area, the 4×4 array is better. |
-| instead **of** | 〜の代わりに | We used SRAM instead **of** flip-flops. |
+| depend **on** | 〜に依存する | The result depends **on** how much you practice. |
+| result **in** | 〜という結果になる | Skipping meals results **in** low energy. |
+| consist **of** | 〜から成る | The course consists **of** 12 lessons. |
+| lead **to** | 〜につながる | Regular exercise leads **to** better sleep. |
+| deal **with** | 〜を扱う | This chapter deals **with** time management. |
+| focus **on** | 〜に焦点を当てる | We should focus **on** the presentation first. |
+| according **to** | 〜によると | According **to** the weather forecast, it will rain tomorrow. |
+| due **to** | 〜が原因で | The delay was due **to** heavy traffic. |
+| in terms **of** | 〜の観点で | In terms **of** taste, this recipe is better. |
+| instead **of** | 〜の代わりに | I had tea instead **of** coffee this morning. |
 
 ---
 
@@ -50,22 +50,22 @@
 1. The meeting starts _______ 10am _______ Monday.
 2. We need to finish the report _______ Friday.
 3. I've been working here _______ April.
-4. The simulation ran _______ 3 hours.
-5. _______ the review, she found 2 critical issues.
+4. The movie lasted _______ 3 hours.
+5. _______ the lunch break, she went for a walk.
 
 **場所:**
-6. The register file is _______ the ID stage.
+6. The milk is _______ the fridge.
 7. The results are displayed _______ the screen.
-8. We tested it _______ the lab.
+8. We met _______ the café near the station.
 
-**技術:**
-9. The clock frequency depends _______ the critical path length.
-10. This design consists _______ a CPU and an accelerator.
-11. The DRC failure was due _______ metal spacing violations.
-12. _______ terms _______ performance, design A is better.
-13. Higher utilization leads _______ more routing congestion.
-14. We used a FIFO instead _______ a simple register.
-15. According _______ the timing report, WNS is -0.3ns.
+**日常・ビジネス:**
+9. Your score depends _______ how much you study.
+10. The team consists _______ five designers and two writers.
+11. The cancellation was due _______ bad weather.
+12. _______ terms _______ price, restaurant A is cheaper.
+13. Eating too much sugar leads _______ health problems.
+14. She took the stairs instead _______ the elevator.
+15. According _______ the news, the train service is delayed.
 
 ---
 
@@ -79,43 +79,43 @@
 
 | 動詞 | 例 |
 |------|-----|
-| want | I **want to improve** the design. |
-| need | We **need to fix** this bug. |
-| decide | They **decided to use** sky130. |
+| want | I **want to improve** my cooking skills. |
+| need | We **need to fix** the schedule. |
+| decide | They **decided to use** a different venue. |
 | plan | I **plan to finish** by Friday. |
-| expect | We **expect to achieve** timing closure. |
-| hope | I **hope to pass** all tests. |
-| agree | She **agreed to review** my code. |
-| learn | I'm **learning to use** OpenROAD. |
+| expect | We **expect to arrive** by noon. |
+| hope | I **hope to pass** the exam. |
+| agree | She **agreed to help** with the party. |
+| learn | I'm **learning to play** the guitar. |
 
 ### -ing を取る動詞
 
 | 動詞 | 例 |
 |------|-----|
-| enjoy | I **enjoy debugging** hardware. |
-| avoid | **Avoid using** global signals. |
-| finish | We **finished testing** the module. |
-| consider | **Consider adding** more pipeline stages. |
-| suggest | I **suggest running** the tests again. |
-| keep | **Keep checking** the waveform. |
-| mind | Do you **mind sharing** your screen? |
+| enjoy | I **enjoy cooking** Italian food. |
+| avoid | **Avoid eating** too much before exercise. |
+| finish | We **finished cleaning** the apartment. |
+| consider | **Consider taking** a different route. |
+| suggest | I **suggest leaving** early to avoid traffic. |
+| keep | **Keep stirring** until the sauce thickens. |
+| mind | Do you **mind opening** the window? |
 | practice | I need to **practice speaking** English. |
 
 ### 意味が変わる動詞（重要！）
 
 | 動詞 | to do | -ing |
 |------|-------|------|
-| **stop** | stop **to check** = チェックするために立ち止まる | stop **checking** = チェックするのをやめる |
-| **remember** | remember **to save** = 忘れずに保存する(これから) | remember **saving** = 保存したことを覚えている(過去) |
-| **try** | try **to fix** = 修正しようと努力する | try **fixing** = 試しに修正してみる |
-| **forget** | forget **to send** = 送るのを忘れる(これから) | forget **sending** = 送ったことを忘れる(過去) |
+| **stop** | stop **to rest** = 休むために立ち止まる | stop **resting** = 休むのをやめる |
+| **remember** | remember **to lock** = 忘れずに鍵をかける(これから) | remember **locking** = 鍵をかけたことを覚えている(過去) |
+| **try** | try **to lift** = 持ち上げようと努力する | try **lifting** = 試しに持ち上げてみる |
+| **forget** | forget **to buy** = 買うのを忘れる(これから) | forget **buying** = 買ったことを忘れる(過去) |
 
 ### 前置詞の後は常に -ing
 
-- I'm interested **in learning** RISC-V.
+- I'm interested **in learning** French.
 - Thank you **for helping** me.
 - I'm looking forward **to meeting** you. (to は前置詞なので -ing)
-- I'm good **at writing** testbenches.
+- I'm good **at cooking** pasta.
 
 ---
 
@@ -123,30 +123,30 @@
 
 to do / -ing の正しい形を入れなさい。
 
-1. I want _______ (learn) more about NoC architecture.
-2. She enjoys _______ (write) RTL code.
-3. We decided _______ (use) a weight-stationary dataflow.
-4. Avoid _______ (use) blocking assignments in sequential logic.
-5. I need _______ (review) the timing report.
-6. Consider _______ (add) a pipeline register here.
-7. He finished _______ (debug) the testbench.
-8. They agreed _______ (help) with the physical design.
+1. I want _______ (learn) more about photography.
+2. She enjoys _______ (run) in the morning.
+3. We decided _______ (take) a vacation in August.
+4. Avoid _______ (skip) breakfast on workdays.
+5. I need _______ (check) the schedule before the meeting.
+6. Consider _______ (try) a different gym.
+7. He finished _______ (pack) his suitcase.
+8. They agreed _______ (help) with the party preparations.
 
 意味の違いに注意して訳しなさい。
 
-9. I stopped **to check** the waveform. → 意味:
-10. I stopped **checking** the waveform. → 意味:
-11. Remember **to save** your work before closing. → 意味:
-12. I remember **saving** the file yesterday. → 意味:
-13. Try **to fix** the timing violation. → 意味:
-14. Try **using** a different clock constraint. → 意味:
+9. I stopped **to drink** some water. → 意味:
+10. I stopped **drinking** soda. → 意味:
+11. Remember **to lock** the door before leaving. → 意味:
+12. I remember **locking** the door this morning. → 意味:
+13. Try **to finish** the report by tonight. → 意味:
+14. Try **adding** more salt to the soup. → 意味:
 
 前置詞 + -ing の形にしなさい。
 
-15. I'm interested _______ _______ (work) on AI processors.
-16. She's good _______ _______ (optimize) timing.
-17. Thank you _______ _______ (review) my code.
-18. I'm looking forward _______ _______ (join) the team.
+15. I'm interested _______ _______ (travel) to South America.
+16. She's good _______ _______ (organize) events.
+17. Thank you _______ _______ (carry) my bags.
+18. I'm looking forward _______ _______ (visit) you next month.
 
 ---
 
@@ -160,7 +160,7 @@ to do / -ing の正しい形を入れなさい。
 5. During
 6. in
 7. on
-8. in (at でも可)
+8. at (in でも可)
 9. on
 10. of
 11. to
@@ -171,23 +171,23 @@ to do / -ing の正しい形を入れなさい。
 
 ### 5-2
 1. to learn
-2. writing
-3. to use
-4. using
-5. to review
-6. adding
-7. debugging
+2. running
+3. to take
+4. skipping
+5. to check
+6. trying
+7. packing
 8. to help
 
 意味:
-9. 波形を確認するために立ち止まった
-10. 波形を確認するのをやめた
-11. 閉じる前に忘れずにセーブして（これからの行動）
-12. 昨日ファイルをセーブしたことを覚えている（過去の記憶）
-13. タイミング違反を修正しようと努力して
-14. 試しに違うクロック制約を使ってみて
+9. 水を飲むために立ち止まった
+10. 炭酸飲料を飲むのをやめた
+11. 出かける前に忘れずにドアの鍵をかけて（これからの行動）
+12. 今朝ドアの鍵をかけたことを覚えている（過去の記憶）
+13. 今夜までにレポートを終わらせようと努力して
+14. 試しにスープに塩をもう少し加えてみて
 
-15. in working
-16. at optimizing
-17. for reviewing
-18. to joining
+15. in traveling
+16. at organizing
+17. for carrying
+18. to visiting

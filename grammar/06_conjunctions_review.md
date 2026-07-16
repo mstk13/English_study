@@ -8,12 +8,12 @@
 
 | 語 | 品詞 | 使い方 | 例 |
 |----|------|--------|-----|
-| **although** | 接続詞 | Although + S + V, S + V | **Although** the design passed DRC, it failed LVS. |
-| **even though** | 接続詞 | even thoughの方が驚き感あり | **Even though** we optimized it, the timing was still bad. |
+| **although** | 接続詞 | Although + S + V, S + V | **Although** the restaurant was expensive, the food was excellent. |
+| **even though** | 接続詞 | even thoughの方が驚き感あり | **Even though** we practiced a lot, we lost the game. |
 | **despite** | 前置詞 | despite + 名詞/-ing | **Despite** the tight schedule, we finished on time. |
-| **in spite of** | 前置詞 | = despite | **In spite of** the bugs, the chip worked. |
-| **however** | 副詞 | 文頭/文中。カンマで区切る | The area is small. **However**, the power is high. |
-| **nevertheless** | 副詞 | = however（よりフォーマル） | The test failed. **Nevertheless**, we learned a lot. |
+| **in spite of** | 前置詞 | = despite | **In spite of** the rain, the event was a success. |
+| **however** | 副詞 | 文頭/文中。カンマで区切る | The hotel was clean. **However**, the location was inconvenient. |
+| **nevertheless** | 副詞 | = however（よりフォーマル） | The exam was hard. **Nevertheless**, we learned a lot. |
 
 **注意: although と despite の使い分け**
 - although + **文 (S+V)**: Although **it was** difficult...
@@ -25,29 +25,29 @@
 
 | 語 | 品詞 | 使い方 | 例 |
 |----|------|--------|-----|
-| **because** | 接続詞 | because + S + V | We failed **because** the constraint was wrong. |
-| **because of** | 前置詞 | because of + 名詞 | We failed **because of** the wrong constraint. |
+| **because** | 接続詞 | because + S + V | We were late **because** the train was delayed. |
+| **because of** | 前置詞 | because of + 名詞 | We were late **because of** the train delay. |
 | **since** | 接続詞 | = because (フォーマル) | **Since** we have limited time, let's prioritize. |
-| **therefore** | 副詞 | 結果を述べる | The path is too long. **Therefore**, we need more stages. |
-| **as a result** | 副詞句 | = therefore | The clock was too fast. **As a result**, setup violations occurred. |
-| **due to** | 前置詞 | = because of | The failure was **due to** a hold violation. |
+| **therefore** | 副詞 | 結果を述べる | The road was flooded. **Therefore**, we took a detour. |
+| **as a result** | 副詞句 | = therefore | He didn't study enough. **As a result**, he failed the test. |
+| **due to** | 前置詞 | = because of | The cancellation was **due to** bad weather. |
 
 ### 追加・列挙
 
 | 語 | 使い方 | 例 |
 |----|--------|-----|
-| **in addition** | さらに | **In addition**, we need to check power. |
-| **moreover** | さらに (フォーマル) | **Moreover**, the area exceeded the target. |
-| **furthermore** | さらに (最もフォーマル) | **Furthermore**, the cost would increase. |
-| **for example / for instance** | 例えば | **For example**, the MAC unit uses 2 cycles. |
+| **in addition** | さらに | **In addition**, we need to buy groceries. |
+| **moreover** | さらに (フォーマル) | **Moreover**, the cost exceeded our budget. |
+| **furthermore** | さらに (最もフォーマル) | **Furthermore**, the delivery will be delayed. |
+| **for example / for instance** | 例えば | **For example**, jogging for 30 minutes burns about 300 calories. |
 
 ### 対照
 
 | 語 | 使い方 | 例 |
 |----|--------|-----|
-| **on the other hand** | 一方で | ASIC is fast. **On the other hand**, FPGA is flexible. |
-| **in contrast** | 対照的に | Design A is area-efficient. **In contrast**, Design B focuses on speed. |
-| **while / whereas** | 〜なのに対して | **While** Design A is small, Design B is fast. |
+| **on the other hand** | 一方で | Cooking at home is cheap. **On the other hand**, eating out is more convenient. |
+| **in contrast** | 対照的に | Tokyo is crowded. **In contrast**, the countryside is peaceful. |
+| **while / whereas** | 〜なのに対して | **While** coffee is strong, tea is more mild. |
 
 ---
 
@@ -55,22 +55,22 @@
 
 適切な語を選びなさい。
 
-1. (Although / Despite) the simulation took 10 hours, the results were worth it.
-2. (Although / Despite) the long simulation time, the results were worth it.
-3. The DRC passed. (However / Although), LVS still has errors.
-4. The timing was bad (because / because of) we used the wrong SDC.
-5. The timing was bad (because / because of) the wrong SDC.
-6. We found 3 bugs. (Therefore / Because), we delayed the tape-out.
-7. (While / However) the CPU is simple, the accelerator is complex.
-8. The design is power-efficient. (In addition / In contrast), it is also small.
+1. (Although / Despite) the hike took 5 hours, the view from the top was worth it.
+2. (Although / Despite) the heavy rain, the outdoor concert continued.
+3. The hotel was nice. (However / Although), the breakfast was disappointing.
+4. We missed the bus (because / because of) we left the house too late.
+5. We missed the bus (because / because of) the heavy snow.
+6. She got a promotion. (Therefore / Because), she decided to celebrate with her friends.
+7. (While / However) the gym is nearby, the swimming pool is across town.
+8. The apartment is affordable. (In addition / In contrast), it is close to the station.
 
 書き換えなさい（意味を変えずに）。
 
-9. Although the test failed, we found useful data.
+9. Although the exam was difficult, she passed with a high score.
    → Despite ______________________________________
-10. Because of the tight deadline, we skipped LVS.
+10. Because of the bad weather, we cancelled the barbecue.
     → Because ______________________________________
-11. The area is large. However, the performance is excellent.
+11. The room is small. However, the rent is very reasonable.
     → Although ______________________________________
 
 ---
@@ -82,38 +82,38 @@
 ### Part A: 空欄補充
 
 1. I _______ (work) on this project since last month.
-2. By the time the review started, she _______ (already / finish) the report.
-3. If we _______ (have) a faster tool, the flow _______ (take) less time.
-4. The chip, _______ was designed for edge AI, consumes very little power.
-5. This architecture is _______ (efficient) than the previous generation.
-6. The RTL _______ (write) by the new engineer and _______ (review) by the lead.
-7. We need _______ (complete) the DRC check before Friday.
-8. I enjoy _______ (optimize) physical layouts.
-9. _______ (finish) the verification, we moved on to synthesis.
-10. The failure was due _______ a clock domain crossing issue.
+2. By the time the guests arrived, she _______ (already / finish) cooking.
+3. If we _______ (have) a bigger kitchen, we _______ (cook) more often.
+4. The café, _______ was opened last year, serves excellent pastries.
+5. Running outside is _______ (enjoyable) than using a treadmill.
+6. The report _______ (write) by my colleague and _______ (review) by the manager.
+7. We need _______ (book) the tickets before Friday.
+8. I enjoy _______ (try) new recipes on weekends.
+9. _______ (finish) dinner, we went for a walk in the park.
+10. The flight delay was due _______ strong winds.
 
 ### Part B: 誤文訂正
 
 各文の誤りを見つけて訂正しなさい。
 
 1. I have finished the report yesterday.
-2. If I was you, I would rewrite this module.
-3. The engineer which designed this is very skilled.
-4. This chip is more better than the old one.
-5. Despite it was raining, we went to the lab.
-6. I want learning SystemVerilog.
-7. She has been writing 3 reports today.
+2. If I was you, I would choose the window seat.
+3. The chef which made this dish is very talented.
+4. This cake is more better than the one we had last time.
+5. Despite it was raining, we went for a jog.
+6. I want learning how to play the guitar.
+7. She has been reading 3 books this month.
 8. I remember to send the email last night.
-9. The tool is not as faster as we expected.
+9. The park is not as bigger as I expected.
 10. He stopped to smoke last year.
 
 ### Part C: 和文英訳
 
 1. 私はこの会社で3年間働いています。(今も働いている)
-2. もしもっと時間があれば、テストケースを増やすのに。
-3. OpenROADで設計されたチップは、DRCをパスした。
-4. パイプラインの段数が多いほど、周波数は高くなる。
-5. 合成が終わるまで、私はずっとドキュメントを書いていた。
+2. もしもっと時間があれば、もっと旅行するのに。
+3. 駅の近くにオープンしたレストランは、予約がなかなか取れない。
+4. 練習すればするほど、上手になる。
+5. 夕食の準備が終わるまで、私はずっと掃除をしていた。
 
 ---
 
@@ -130,37 +130,37 @@
 8. In addition
 
 書き換え:
-9. Despite the test failing (/ the failed test), we found useful data.
-10. Because the deadline was tight, we skipped LVS.
-11. Although the area is large, the performance is excellent.
+9. Despite the exam being difficult (/ the difficult exam), she passed with a high score.
+10. Because the weather was bad, we cancelled the barbecue.
+11. Although the room is small, the rent is very reasonable.
 
 ### 6-2 Part A
 1. have been working
 2. had already finished
-3. had / would take
+3. had / would cook
 4. which
-5. more efficient
+5. more enjoyable
 6. was written / reviewed
-7. to complete
-8. optimizing
+7. to book
+8. trying
 9. Having finished
 10. to
 
 ### 6-2 Part B
 1. I ~~have finished~~ **finished** the report yesterday. (yesterday → 過去形)
 2. If I ~~was~~ **were** you... (仮定法は were)
-3. The engineer ~~which~~ **who** designed... (人は who)
+3. The chef ~~which~~ **who** made... (人は who)
 4. ~~more better~~ → **better** (better は既に比較級)
 5. ~~Despite~~ **Although** it was raining... (despite の後に文は不可)
 6. I want ~~learning~~ **to learn**... (want + to do)
-7. She ~~has been writing~~ **has written** 3 reports. (回数=結果 → 現在完了)
+7. She ~~has been reading~~ **has read** 3 books. (回数=結果 → 現在完了)
 8. I remember ~~to send~~ **sending** the email last night. (過去のことを覚えている → -ing)
-9. not as ~~faster~~ **fast** as (as...as の間は原級)
+9. not as ~~bigger~~ **big** as (as...as の間は原級)
 10. He stopped ~~to smoke~~ **smoking** last year. (吸うのをやめた → -ing)
 
 ### 6-2 Part C
 1. I have worked (/ have been working) at this company for 3 years.
-2. If I had more time, I would add more test cases.
-3. The chip (which was) designed with OpenROAD passed the DRC.
-4. The more pipeline stages we add, the higher the frequency.
-5. Until the synthesis was finished (/ completed), I had been writing documentation.
+2. If I had more time, I would travel more.
+3. The restaurant (which was) opened near the station is hard to get a reservation at.
+4. The more you practice, the better you get.
+5. Until dinner was ready (/ finished), I had been cleaning.

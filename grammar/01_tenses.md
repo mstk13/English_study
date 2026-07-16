@@ -28,15 +28,15 @@
 
 空欄に適切な形を入れなさい。
 
-1. I _______ (already / finish) the design review.
-2. We _______ (complete) the project last Friday.
-3. _______ you ever _______ (use) OpenROAD before?
-4. He _______ (join) Tenstorrent in 2025.
-5. She _______ (work) here since April.
-6. I _______ (not / see) that error before.
-7. They _______ (release) the new chip last month.
-8. We _______ (not / decide) the clock frequency yet.
-9. When _______ you _______ (start) learning RISC-V?
+1. I _______ (already / finish) packing my suitcase.
+2. We _______ (move) to this apartment last March.
+3. _______ you ever _______ (try) Thai food before?
+4. He _______ (start) his new job in 2025.
+5. She _______ (work) at this company since April.
+6. I _______ (not / see) that movie before.
+7. They _______ (open) a new Italian restaurant last month.
+8. We _______ (not / decide) where to go for vacation yet.
+9. When _______ you _______ (start) learning to cook?
 10. I _______ (study) English for 10 years, but I still make mistakes.
 
 ---
@@ -59,7 +59,7 @@
 ### 例文
 
 - It **has been raining** since morning. (朝からずっと降っている)
-- You look tired. — Yes, I **have been debugging** this code all night. (ずっとデバッグしていた)
+- You look tired. — Yes, I **have been cleaning** the house all day. (ずっと掃除していた)
 - How long **have** you **been working** on this project? (いつからやっているの？)
 
 ---
@@ -68,14 +68,14 @@
 
 現在完了 or 現在完了進行形を選んで空欄を埋めなさい。
 
-1. I _______ (write) code for 6 hours. I need a break.
-2. She _______ (write) 3 test cases so far.
-3. How long _______ you _______ (wait) for the synthesis to finish?
-4. We _______ (run) 50 simulations this week.
+1. I _______ (study) for the exam for 6 hours. I need a break.
+2. She _______ (bake) 3 cakes so far.
+3. How long _______ you _______ (wait) for the bus?
+4. We _______ (visit) 50 temples this trip.
 5. It _______ (snow) all day.
-6. He _______ (read) the RISC-V spec. He's on chapter 5 now.
-7. I _______ (fix) 10 bugs today.
-8. They _______ (discuss) the architecture since this morning.
+6. He _______ (read) that novel. He's on chapter 5 now.
+7. I _______ (wash) 10 dishes today.
+8. They _______ (discuss) the wedding plans since this morning.
 
 ---
 
@@ -92,8 +92,8 @@
 | 文 | 意味 |
 |-----|------|
 | When I arrived, the meeting **had already started**. | 着いたとき、会議はもう始まっていた |
-| I didn't know that because I **hadn't read** the spec. | スペックを読んでいなかったから知らなかった |
-| She **had never used** SystemVerilog before she joined the team. | チームに入る前にSVを使ったことがなかった |
+| I didn't know that because I **hadn't read** the email. | メールを読んでいなかったから知らなかった |
+| She **had never traveled** abroad before she turned 30. | 30歳になる前に海外旅行をしたことがなかった |
 
 **使うタイミング:**
 - 2つの過去の出来事の**順序を明確にしたい**とき
@@ -112,14 +112,14 @@
 
 空欄を過去形 or 過去完了で埋めなさい。
 
-1. By the time we _______ (find) the bug, the test _______ (already / fail) 100 times.
-2. I _______ (not / know) about the meeting because nobody _______ (tell) me.
-3. She _______ (finish) the layout before the deadline _______ (come).
-4. After he _______ (review) the code, he _______ (approve) the PR.
-5. I _______ (never / see) a timing violation that bad before I _______ (start) this project.
-6. The synthesis _______ (already / complete) when I _______ (arrive) at the office.
-7. We _______ (realize) that we _______ (use) the wrong clock constraint.
-8. They _______ (not / test) the edge cases before they _______ (release) the chip.
+1. By the time we _______ (arrive) at the station, the train _______ (already / leave).
+2. I _______ (not / know) about the party because nobody _______ (tell) me.
+3. She _______ (finish) cooking before the guests _______ (come).
+4. After he _______ (check) the map, he _______ (find) the right route.
+5. I _______ (never / eat) sushi before I _______ (visit) Japan.
+6. The store _______ (already / close) when I _______ (get) there.
+7. We _______ (realize) that we _______ (take) the wrong bus.
+8. They _______ (not / book) a hotel before they _______ (leave) for the trip.
 
 ---
 
@@ -127,32 +127,32 @@
 
 ### 1-1
 1. have already finished
-2. completed
-3. Have / used
-4. joined
+2. moved
+3. Have / tried
+4. started
 5. has worked
 6. have not (haven't) seen
-7. released
+7. opened
 8. have not (haven't) decided
 9. did / start
 10. have studied
 
 ### 1-2
-1. have been writing
-2. has written
+1. have been studying
+2. has baked
 3. have / been waiting
-4. have run
+4. have visited
 5. has been snowing
 6. has been reading
-7. have fixed
+7. have washed
 8. have been discussing
 
 ### 1-3
-1. found / had already failed
+1. arrived / had already left
 2. didn't know / had told (nobody had told)
 3. had finished / came
-4. had reviewed / approved
-5. had never seen / started
-6. had already completed / arrived
-7. realized / had used
-8. hadn't tested / released
+4. had checked / found
+5. had never eaten / visited
+6. had already closed / got
+7. realized / had taken
+8. hadn't booked / left

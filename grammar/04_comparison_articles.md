@@ -8,9 +8,9 @@
 
 | パターン | 形 | 例 |
 |---------|-----|-----|
-| **比較級** | -er / more + than | This design is **faster than** the previous one. |
-| **最上級** | -est / most | This is the **fastest** chip in the lineup. |
-| **同等** | as ... as | This array is **as efficient as** the reference design. |
+| **比較級** | -er / more + than | This restaurant is **faster than** the one downtown. |
+| **最上級** | -est / most | This is the **fastest** route to the airport. |
+| **同等** | as ... as | This gym is **as convenient as** the one near my house. |
 
 ### 比較級のルール
 
@@ -26,20 +26,20 @@
 ### 重要パターン
 
 **the + 比較級, the + 比較級** （〜すればするほど〜）
-- **The more** pipeline stages we add, **the higher** the frequency.
-- **The smaller** the process node, **the more** power we save.
+- **The more** you practice, **the better** your English gets.
+- **The earlier** you wake up, **the more** time you have in the morning.
 
 **比較級 + and + 比較級** （だんだん〜）
-- The design is getting **more and more** complex.
-- Chips are becoming **smaller and smaller**.
+- The weather is getting **colder and colder**.
+- Apartment rents are becoming **more and more** expensive.
 
 **not as ... as** （〜ほど...ではない）
-- The new tool is **not as fast as** the old one.
-- My design is **not as power-efficient as** his.
+- Cooking at home is **not as expensive as** eating out.
+- My Italian is **not as fluent as** his.
 
 **倍数表現**
-- This chip is **twice as fast as** the previous generation.
-- The array has **three times as many** PEs as the original.
+- This suitcase is **twice as heavy as** mine.
+- Their house has **three times as many** rooms as our apartment.
 
 ---
 
@@ -47,21 +47,21 @@
 
 適切な形に変えなさい。
 
-1. OpenROAD is _______ (good) than I expected.
-2. This is the _______ (bad) timing violation I've ever seen.
-3. The 4×4 array is _______ (efficient) than the 2×2.
-4. The _______ (much) memory bandwidth we have, the _______ (good) the performance.
-5. My simulation runs twice _______ _______ _______ (fast) yours.
-6. This PDK is not _______ _______ _______ (well-documented) the other one.
-7. The routing is getting _______ _______ _______ (congested).
-8. She writes the _______ (clean) SystemVerilog on the team.
+1. The new café is _______ (good) than I expected.
+2. This is the _______ (bad) traffic jam I've ever been in.
+3. Taking the train is _______ (efficient) than driving during rush hour.
+4. The _______ (much) exercise you do, the _______ (good) you feel.
+5. He runs twice _______ _______ _______ (fast) me.
+6. This recipe is not _______ _______ _______ (easy) the other one.
+7. The city is getting _______ _______ _______ (crowded).
+8. She makes the _______ (clean) presentations on the team.
 
 正しいものを選びなさい。
 
-9. This chip is (more powerful / powerfuler) than the competitor.
-10. He is the (most experienced / experiencedest) engineer here.
+9. This laptop is (more powerful / powerfuler) than the older model.
+10. He is the (most experienced / experiencedest) chef here.
 11. The result was (worse / more bad) than we thought.
-12. This is (further / farther) from the target than expected.
+12. This is (further / farther) from the station than expected.
 
 ---
 
@@ -73,23 +73,23 @@
 
 ### a / an (不定冠詞): 「ある1つの」「どれでもいい1つ」
 
-- I found **a** bug in the code. （バグの1つ。初めて言及）
-- She is **an** engineer. （職業。1人のエンジニア）
-- We need **a** faster clock. （特定のではなく、とにかく速いクロック）
+- I found **a** great restaurant nearby. （レストランの1つ。初めて言及）
+- She is **an** architect. （職業。1人の建築家）
+- We need **a** bigger table. （特定のではなく、とにかく大きいテーブル）
 
 ### the (定冠詞): 「その」「例の」「唯一の」
 
-- I found a bug. → **The** bug was in the ALU. （さっき言ったバグ）
+- I found a restaurant. → **The** restaurant was on Main Street. （さっき言ったレストラン）
 - **The** sun rises in the east. （1つしかない）
-- Can you check **the** timing report? （どのレポートか互いにわかっている）
-- **The** register file stores 32 values. （設計上1つしかない）
+- Can you check **the** schedule? （どのスケジュールか互いにわかっている）
+- **The** kitchen is on the second floor. （家に1つしかない）
 
 ### 無冠詞: 一般論・抽象概念・不可算名詞
 
-- **Software** is easier to change than **hardware**. （一般論）
+- **Exercise** is good for your **health**. （一般論）
 - I'm studying **English**. （言語名）
-- **Silicon** is a semiconductor. （物質名）
-- We discussed **performance** and **power**. （抽象概念）
+- **Water** is essential for life. （物質名）
+- We discussed **teamwork** and **motivation**. （抽象概念）
 
 ### 判断フロー
 
@@ -107,7 +107,7 @@
 | She is engineer. | She is **an** engineer. | 職業は a/an 必要 |
 | The life is short. | **Life** is short. | 人生一般 → 無冠詞 |
 | I went to the bed. | I went to **bed**. | go to bed は定型句 |
-| Open the OpenROAD. | Open **OpenROAD**. | ツール名は無冠詞 |
+| Open the Google Maps. | Open **Google Maps**. | 固有名詞は無冠詞 |
 
 ### 定型句
 
@@ -126,14 +126,14 @@ a / an / the / 無冠詞(—) を入れなさい。
 
 1. I need to buy _______ new laptop.
 2. _______ laptop I bought last week is already slow.
-3. She is _______ best engineer on _______ team.
-4. _______ RISC-V is _______ open-source ISA.
-5. I found _______ error in _______ code. _______ error was in line 42.
+3. She is _______ best cook on _______ team.
+4. _______ yoga is _______ popular form of exercise.
+5. I found _______ error in _______ recipe. _______ error was in step 3.
 6. He goes to _______ gym every day.
-7. _______ silicon is used to make _______ chips.
-8. We had _______ meeting about _______ new design. _______ meeting lasted 2 hours.
-9. _______ performance of _______ systolic array depends on _______ data reuse.
-10. Can you send me _______ email about _______ timing violation we discussed?
+7. _______ water is essential for _______ good health.
+8. We had _______ meeting about _______ new project. _______ meeting lasted 2 hours.
+9. _______ quality of _______ food at that restaurant depends on _______ freshness of ingredients.
+10. Can you send me _______ email about _______ party we discussed?
 11. She plays _______ piano and also likes _______ swimming.
 12. I usually have _______ coffee for _______ breakfast.
 
@@ -147,8 +147,8 @@ a / an / the / 無冠詞(—) を入れなさい。
 3. more efficient
 4. more / better
 5. as fast as
-6. as well-documented as
-7. more and more congested
+6. as easy as
+7. more and more crowded
 8. cleanest
 9. more powerful
 10. most experienced
@@ -159,12 +159,12 @@ a / an / the / 無冠詞(—) を入れなさい。
 1. a
 2. The
 3. the / the
-4. — / an
+4. — / a
 5. an / the / The
 6. the
 7. — / —
 8. a / the (or a) / The
-9. The / the / — (data reuse は一般概念)
+9. The / the / the
 10. an / the
 11. the / — (スポーツは無冠詞)
 12. — / — (coffee, breakfast は不可算/定型)

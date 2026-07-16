@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Grammar Quiz - 6 Weeks</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 40px;
+}
+header {
+  background: linear-gradient(135deg, #4a90d9, #357abd);
+  color: #fff;
+  padding: 16px 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+header h1 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.progress-bar {
+  background: rgba(255,255,255,0.25);
+  border-radius: 6px;
+  height: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  background: #7bed9f;
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.4s;
+}
+.progress-text {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+.tabs {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: rgba(255,255,255,0.8);
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: background 0.2s;
+  position: relative;
+}
+.tab-btn.active {
+  background: #f5f7fa;
+  color: #333;
+  font-weight: 600;
+}
+.tab-btn .check-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #7bed9f;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.week-page { display: none; }
+.week-page.active { display: block; }
+.section-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section-card h2 {
+  font-size: 1rem;
+  color: #4a90d9;
+  margin-bottom: 4px;
+}
+.section-card h3 {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 14px;
+  font-weight: normal;
+}
+.question {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee;
+}
+.question:last-of-type { border-bottom: none; }
+.q-text {
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+.q-text .q-num { font-weight: 600; color: #4a90d9; }
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.input-row input[type="text"] {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  width: 180px;
+  max-width: 100%;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.input-row input[type="text"]:focus {
+  border-color: #4a90d9;
+}
+.input-row input.correct { border-color: #27ae60; background: #eafaf1; }
+.input-row input.wrong { border-color: #e74c3c; background: #fdf2f2; }
+.result-icon {
+  font-size: 1.1rem;
+  display: none;
+}
+.result-icon.show { display: inline; }
+.explanation {
+  display: none;
+  background: #fff8e1;
+  border-left: 3px solid #f0ad4e;
+  padding: 8px 10px;
+  margin-top: 6px;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.82rem;
+  color: #555;
+}
+.explanation.show { display: block; }
+.correct-answer {
+  display: none;
+  font-size: 0.85rem;
+  color: #e74c3c;
+  margin-top: 4px;
+}
+.correct-answer.show { display: block; }
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: background 0.2s;
+}
+.radio-group label:hover { background: #f0f4f8; }
+.radio-group label.correct-choice { border-color: #27ae60; background: #eafaf1; }
+.radio-group label.wrong-choice { border-color: #e74c3c; background: #fdf2f2; }
+.btn-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn:active { opacity: 0.7; }
+.btn-grade { background: #4a90d9; color: #fff; }
+.btn-reset { background: #eee; color: #555; }
+.score-display {
+  display: none;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-top: 12px;
+  text-align: center;
+}
+.score-display.show { display: block; }
+.score-display.perfect { background: #eafaf1; color: #27ae60; }
+.score-display.good { background: #e8f4fd; color: #2980b9; }
+.score-display.needs-work { background: #fdf2f2; color: #c0392b; }
+.freetext-model {
+  display: none;
+  background: #e8f4fd;
+  border-left: 3px solid #4a90d9;
+  padding: 8px 10px;
+  margin-top: 6px;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.82rem;
+  color: #333;
+}
+.freetext-model.show { display: block; }
+textarea.answer-area {
+  width: 100%;
+  min-height: 60px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+textarea.answer-area:focus { border-color: #4a90d9; }
+.sep { margin-top: 10px; padding-top: 10px; border-top: 2px dashed #e0e0e0; }
+.sep-label {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+@media (max-width: 480px) {
+  .container { padding: 10px; }
+  .section-card { padding: 14px; }
+  .input-row input[type="text"] { width: 140px; }
+  .tab-btn { padding: 7px 10px; font-size: 0.78rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>English Grammar Quiz (6 Weeks)</h1>
+  <div class="progress-text" id="progressText">進捗: 0 / 6 週 完了</div>
+  <div class="progress-bar"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="tabs" id="tabs"></div>
+</header>
+
+<div class="container" id="app"></div>
+
+<script>
+// ========== DATA ==========
+const DATA = [
+  // WEEK 1
+  {
+    week: 1,
+    title: "時制の使い分け",
+    sections: [
+      {
+        id: "w1s1",
+        title: "練習問題 1-1",
+        subtitle: "現在完了 vs 過去形 — 空欄に適切な形を入れなさい。",
+        questions: [
+          { type:"fill", prompt:"I _______ (already / finish) packing my suitcase.", blanks:1, answers:[["have already finished"]], explanation:"already → 現在完了のサイン。今に繋がる結果。" },
+          { type:"fill", prompt:"We _______ (move) to this apartment last March.", blanks:1, answers:[["moved"]], explanation:"last March → 過去の特定時点なので過去形。" },
+          { type:"fill2", prompt:"_______ you ever _______ (try) Thai food before?", answers:[["have"],["tried"]], explanation:"ever → 現在完了のサイン。経験を聞いている。" },
+          { type:"fill", prompt:"He _______ (start) his new job in 2025.", blanks:1, answers:[["started"]], explanation:"in 2025 → 過去の特定時点なので過去形。" },
+          { type:"fill", prompt:"She _______ (work) at this company since April.", blanks:1, answers:[["has worked"]], explanation:"since April → 現在完了のサイン。今も続いている。" },
+          { type:"fill", prompt:"I _______ (not / see) that movie before.", blanks:1, answers:[["haven't seen","have not seen"]], explanation:"before → 現在完了。今までの経験。" },
+          { type:"fill", prompt:"They _______ (open) a new Italian restaurant last month.", blanks:1, answers:[["opened"]], explanation:"last month → 過去の特定時点なので過去形。" },
+          { type:"fill", prompt:"We _______ (not / decide) where to go for vacation yet.", blanks:1, answers:[["haven't decided","have not decided"]], explanation:"yet → 現在完了のサイン。まだ決まっていない(今に繋がる)。" },
+          { type:"fill2", prompt:"When _______ you _______ (start) learning to cook?", answers:[["did"],["start"]], explanation:"When → いつ？を聞いているので過去形。" },
+          { type:"fill", prompt:"I _______ (study) English for 10 years, but I still make mistakes.", blanks:1, answers:[["have studied"]], explanation:"for 10 years → 期間の継続。現在完了。" },
+        ]
+      },
+      {
+        id: "w1s2",
+        title: "練習問題 1-2",
+        subtitle: "現在完了 vs 現在完了進行形",
+        questions: [
+          { type:"fill", prompt:"I _______ (study) for the exam for 6 hours. I need a break.", blanks:1, answers:[["have been studying"]], explanation:"継続中の動作 → 現在完了進行形" },
+          { type:"fill", prompt:"She _______ (bake) 3 cakes so far.", blanks:1, answers:[["has baked"]], explanation:"結果・回数 → 現在完了" },
+          { type:"fill2", prompt:"How long _______ you _______ (wait) for the bus?", answers:[["have"],["been waiting"]], explanation:"継続中の動作 → 現在完了進行形" },
+          { type:"fill", prompt:"We _______ (visit) 50 temples this trip.", blanks:1, answers:[["have visited"]], explanation:"結果・回数 → 現在完了" },
+          { type:"fill", prompt:"It _______ (snow) all day.", blanks:1, answers:[["has been snowing"]], explanation:"継続中の動作 → 現在完了進行形" },
+          { type:"fill", prompt:"He _______ (read) that novel. He's on chapter 5 now.", blanks:1, answers:[["has been reading"]], explanation:"まだ読んでいる途中 → 現在完了進行形" },
+          { type:"fill", prompt:"I _______ (wash) 10 dishes today.", blanks:1, answers:[["have washed"]], explanation:"結果・回数 → 現在完了" },
+          { type:"fill", prompt:"They _______ (discuss) the wedding plans since this morning.", blanks:1, answers:[["have been discussing"]], explanation:"継続中の動作 → 現在完了進行形" },
+        ]
+      },
+      {
+        id: "w1s3",
+        title: "練習問題 1-3",
+        subtitle: "過去完了",
+        questions: [
+          { type:"fill2", prompt:"By the time we _______ (arrive) at the station, the train _______ (already / leave).", answers:[["arrived"],["had already left"]], explanation:"着いた時にはもう出ていた → 出発が先なので had left" },
+          { type:"fill2", prompt:"I _______ (not / know) about the party because nobody _______ (tell) me.", answers:[["didn't know","did not know"],["had told"]], explanation:"誰も教えてくれなかった(先) → 知らなかった(後)" },
+          { type:"fill2", prompt:"She _______ (finish) cooking before the guests _______ (come).", answers:[["had finished"],["came"]], explanation:"料理が先に終わった → ゲストが後から来た" },
+          { type:"fill2", prompt:"After he _______ (check) the map, he _______ (find) the right route.", answers:[["had checked"],["found"]], explanation:"地図を確認(先) → ルートを見つけた(後)" },
+          { type:"fill2", prompt:"I _______ (never / eat) sushi before I _______ (visit) Japan.", answers:[["had never eaten"],["visited"]], explanation:"日本に行く前は食べたことがなかった" },
+          { type:"fill2", prompt:"The store _______ (already / close) when I _______ (get) there.", answers:[["had already closed"],["got"]], explanation:"着いた時にはもう閉まっていた" },
+          { type:"fill2", prompt:"We _______ (realize) that we _______ (take) the wrong bus.", answers:[["realized"],["had taken"]], explanation:"間違ったバスに乗った(先) → 気づいた(後)" },
+          { type:"fill2", prompt:"They _______ (not / book) a hotel before they _______ (leave) for the trip.", answers:[["hadn't booked","had not booked"],["left"]], explanation:"旅行に出発する前にホテルを予約していなかった" },
+        ]
+      }
+    ]
+  },
+  // WEEK 2
+  {
+    week: 2,
+    title: "関係代名詞 + 受動態",
+    sections: [
+      {
+        id: "w2s1",
+        title: "練習問題 2-1",
+        subtitle: "関係代名詞",
+        questions: [
+          { type:"fill", prompt:"The suitcase _______ weighs over 20 kg needs to be checked in.", blanks:1, answers:[["which","that"]], explanation:"主格、省略不可。物なので which / that。" },
+          { type:"fill", prompt:"The recipe _______ I found online turned out great.", blanks:1, answers:[["which","that"]], explanation:"目的格、省略可。物なので which / that。" },
+          { type:"fill", prompt:"She is the teacher _______ class is always full.", blanks:1, answers:[["whose"]], explanation:"所有を表すので whose。" },
+          { type:"fill", prompt:"This coffee shop, _______ is near the station, has excellent pastries.", blanks:1, answers:[["which"]], explanation:"非制限用法 → that は不可。which を使う。" },
+          { type:"fill", prompt:"The gym _______ we work out is open 24 hours.", blanks:1, answers:[["where"]], explanation:"場所を表すので where。" },
+          { type:"fill", prompt:"The umbrella _______ I forgot to bring was my favorite one.", blanks:1, answers:[["which","that"]], explanation:"目的格、省略可。物なので which / that。" },
+          { type:"fill", prompt:"He showed me the garden, _______ looked beautiful in spring.", blanks:1, answers:[["which"]], explanation:"非制限用法 → that は不可。which を使う。" },
+          { type:"fill", prompt:"The colleague _______ desk is next to mine is always cheerful.", blanks:1, answers:[["whose"]], explanation:"所有を表すので whose。" },
+        ]
+      },
+      {
+        id: "w2s2",
+        title: "練習問題 2-2a",
+        subtitle: "能動態→受動態に書き換えなさい。",
+        questions: [
+          { type:"free", prompt:"The volunteers organized the charity event.", model:"The charity event was organized by the volunteers." },
+          { type:"free", prompt:"We have not cleaned the kitchen yet.", model:"The kitchen has not been cleaned yet." },
+          { type:"free", prompt:"They will publish the magazine next month.", model:"The magazine will be published next month." },
+          { type:"free", prompt:"Someone stole my bicycle from the parking lot.", model:"My bicycle was stolen from the parking lot." },
+          { type:"free", prompt:"The staff are preparing the banquet hall right now.", model:"The banquet hall is being prepared by the staff right now." },
+        ]
+      },
+      {
+        id: "w2s3",
+        title: "練習問題 2-2b",
+        subtitle: "受動態→能動態に書き換えなさい。",
+        questions: [
+          { type:"free", prompt:"The goal was scored by the youngest player on the team.", model:"The youngest player on the team scored the goal." },
+          { type:"free", prompt:"The concert tickets have been sold out online.", model:"They have sold out the concert tickets online." },
+          { type:"free", prompt:"The new menu is being tested by the head chef.", model:"The head chef is testing the new menu." },
+        ]
+      },
+      {
+        id: "w2s4",
+        title: "練習問題 2-2c",
+        subtitle: "適切な受動態の形を書きなさい。",
+        questions: [
+          { type:"fill", prompt:"English (speak) _______ in many countries.", blanks:1, answers:[["is spoken"]], explanation:"一般的事実の受動態 → is spoken" },
+          { type:"fill", prompt:"The letter (write) _______ by her last week.", blanks:1, answers:[["was written"]], explanation:"last week → 過去の受動態" },
+          { type:"fill", prompt:"The laundry (not / fold) _______ yet.", blanks:1, answers:[["has not been folded","hasn't been folded"]], explanation:"yet → 現在完了の受動態" },
+          { type:"fill", prompt:"The flight (expect) _______ to arrive at 3 PM.", blanks:1, answers:[["is expected"]], explanation:"一般的な受動態 → is expected" },
+          { type:"fill", prompt:"All the homework (finish) _______ before dinner.", blanks:1, answers:[["has been finished"]], explanation:"現在完了の受動態" },
+          { type:"fill", prompt:"The cake (decorate) _______ by the baker right now.", blanks:1, answers:[["is being decorated"]], explanation:"right now → 現在進行形の受動態" },
+        ]
+      }
+    ]
+  },
+  // WEEK 3
+  {
+    week: 3,
+    title: "仮定法 + 分詞構文",
+    sections: [
+      {
+        id: "w3s1",
+        title: "練習問題 3-1",
+        subtitle: "仮定法",
+        questions: [
+          { type:"fill2", prompt:"[仮定法過去] If I _______ (have) a car, I _______ (drive) to work instead of taking the bus.", answers:[["had"],["would drive"]], explanation:"仮定法過去: If + 過去形, would + 原形" },
+          { type:"fill2", prompt:"[仮定法過去] If she _______ (be) free tonight, we _______ (not / have) to cancel the dinner.", answers:[["were"],["would not have","wouldn't have"]], explanation:"仮定法過去: be動詞は were を使う" },
+          { type:"fill2", prompt:"[仮定法過去] If we _______ (know) his address, we _______ (send) him a birthday card.", answers:[["knew"],["would send"]], explanation:"仮定法過去: If + 過去形, would + 原形" },
+          { type:"fill2", prompt:"[仮定法過去] I _______ (join) the gym if I _______ (have) more free time.", answers:[["would join"],["had"]], explanation:"仮定法過去: 主節と条件節が逆の語順" },
+          { type:"fill2", prompt:"[仮定法過去] If the weather _______ (be) nicer, we _______ (can / go) to the beach.", answers:[["were"],["could go"]], explanation:"仮定法過去: could + 原形 も使える" },
+          { type:"fill2", prompt:"[仮定法過去完了] If I _______ (check) the weather forecast, I _______ (not / forget) my umbrella.", answers:[["had checked"],["would not have forgotten","wouldn't have forgotten"]], explanation:"仮定法過去完了: If + had p.p., would have p.p." },
+          { type:"fill2", prompt:"[仮定法過去完了] If we _______ (leave) earlier, we _______ (catch) the last train.", answers:[["had left"],["would have caught"]], explanation:"仮定法過去完了: If + had p.p., would have p.p." },
+          { type:"fill2", prompt:"[仮定法過去完了] The picnic _______ (not / be ruined) if it _______ (not / rain) that day.", answers:[["would not have been ruined","wouldn't have been ruined"],["had not rained","hadn't rained"]], explanation:"仮定法過去完了: 主節と条件節が逆の語順" },
+          { type:"fill", prompt:"I wish I _______ (be) better at cooking.", blanks:1, answers:[["were"]], explanation:"I wish + 仮定法過去 → were" },
+          { type:"fill", prompt:"I wish we _______ (book) the hotel earlier.", blanks:1, answers:[["had booked"]], explanation:"I wish + 仮定法過去完了 → had booked" },
+        ]
+      },
+      {
+        id: "w3s2",
+        title: "練習問題 3-2a",
+        subtitle: "分詞構文に書き換えなさい。",
+        questions: [
+          { type:"free", prompt:"Because I didn't understand the menu, I asked the waiter for help.", model:"Not understanding the menu, I asked the waiter for help." },
+          { type:"free", prompt:"After she had finished her presentation, she answered questions.", model:"Having finished her presentation, she answered questions." },
+          { type:"free", prompt:"While he was jogging in the park, he ran into an old friend.", model:"Jogging in the park, he ran into an old friend." },
+          { type:"free", prompt:"Because the cake was baked at a low temperature, it stayed moist.", model:"Baked at a low temperature, the cake stayed moist." },
+          { type:"free", prompt:"If you turn left at the traffic light, you can find the post office.", model:"Turning left at the traffic light, you can find the post office." },
+        ]
+      },
+      {
+        id: "w3s3",
+        title: "練習問題 3-2b",
+        subtitle: "分詞構文→普通の文に書き換えなさい。",
+        questions: [
+          { type:"free", prompt:"Having checked the weather forecast, we decided to go camping.", model:"After we had checked the weather forecast, we decided to go camping." },
+          { type:"free", prompt:"Not knowing anyone at the party, he stood alone by the door.", model:"Because he didn't know anyone at the party, he stood alone by the door." },
+          { type:"free", prompt:"Built over 100 years ago, the bridge is still in use today.", model:"Because the bridge was built over 100 years ago, it is still in use today." },
+        ]
+      },
+      {
+        id: "w3s4",
+        title: "練習問題 3-2c",
+        subtitle: "-ing か -ed か？",
+        questions: [
+          { type:"fill", prompt:"The cookies (bake) _______ by my grandmother were the best.", blanks:1, answers:[["baked"]], explanation:"受動 → 過去分詞 (-ed)" },
+          { type:"fill", prompt:"The girl (sit) _______ next to me was reading a novel.", blanks:1, answers:[["sitting"]], explanation:"能動 → 現在分詞 (-ing)" },
+          { type:"fill", prompt:"The letter (write) _______ in French was hard to understand.", blanks:1, answers:[["written"]], explanation:"受動 → 過去分詞" },
+          { type:"fill", prompt:"The river (flow) _______ through the town provides drinking water.", blanks:1, answers:[["flowing"]], explanation:"能動 → 現在分詞 (-ing)" },
+        ]
+      }
+    ]
+  },
+  // WEEK 4
+  {
+    week: 4,
+    title: "比較表現 + 冠詞",
+    sections: [
+      {
+        id: "w4s1",
+        title: "練習問題 4-1",
+        subtitle: "比較表現",
+        questions: [
+          { type:"fill", prompt:"The new café is _______ (good) than I expected.", blanks:1, answers:[["better"]], explanation:"good の比較級は better" },
+          { type:"fill", prompt:"This is the _______ (bad) traffic jam I've ever been in.", blanks:1, answers:[["worst"]], explanation:"bad の最上級は worst" },
+          { type:"fill", prompt:"Taking the train is _______ (efficient) than driving during rush hour.", blanks:1, answers:[["more efficient"]], explanation:"長い形容詞 → more + 原級" },
+          { type:"fill2", prompt:"The _______ (much) exercise you do, the _______ (good) you feel.", answers:[["more"],["better"]], explanation:"The + 比較級, the + 比較級 の構文" },
+          { type:"fill", prompt:"He runs twice _______ _______ _______ (fast) me.", blanks:1, answers:[["as fast as"]], explanation:"倍数 + as...as の構文" },
+          { type:"fill", prompt:"This recipe is not _______ _______ _______ (easy) the other one.", blanks:1, answers:[["as easy as"]], explanation:"not as...as = 同等でない" },
+          { type:"fill", prompt:"The city is getting _______ _______ _______ _______ (crowded).", blanks:1, answers:[["more and more crowded"]], explanation:"比較級 and 比較級 = だんだん〜" },
+          { type:"fill", prompt:"She makes the _______ (clean) presentations on the team.", blanks:1, answers:[["cleanest"]], explanation:"短い形容詞の最上級 → -est" },
+          { type:"choice", prompt:"This laptop is _______ than the older model.", choices:["more powerful","powerfuler"], answer:0, explanation:"長い形容詞 → more + 原級。powerfuler は不正。" },
+          { type:"choice", prompt:"He is the _______ chef here.", choices:["most experienced","experiencedest"], answer:0, explanation:"長い形容詞 → most + 原級。experiencedest は不正。" },
+          { type:"choice", prompt:"The result was _______ than we thought.", choices:["worse","more bad"], answer:0, explanation:"bad の比較級は worse。more bad は不正。" },
+          { type:"choice", prompt:"This is _______ from the station than expected.", choices:["further","farther"], answer:0, explanation:"距離・程度ともに further が使える。" },
+        ]
+      },
+      {
+        id: "w4s2",
+        title: "練習問題 4-2",
+        subtitle: "冠詞 (a / an / the / — ※不要なら「なし」と入力)",
+        questions: [
+          { type:"fill", prompt:"I need to buy _______ new laptop.", blanks:1, answers:[["a"]], explanation:"不特定の一つ → a" },
+          { type:"fill", prompt:"_______ laptop I bought last week is already slow.", blanks:1, answers:[["the","The"]], explanation:"特定のもの → the" },
+          { type:"fill2", prompt:"She is _______ best cook on _______ team.", answers:[["the"],["the"]], explanation:"最上級 → the / 特定のチーム → the" },
+          { type:"fill2", prompt:"_______ yoga is _______ popular form of exercise.", answers:[["なし"],["a"]], explanation:"一般的な概念 → 無冠詞 / 不特定の形態 → a" },
+          { type:"fill3", prompt:"I found _______ error in _______ recipe. _______ error was in step 3.", answers:[["an"],["the"],["the","The"]], explanation:"初出 → an / 特定のレシピ → the / 2回目の言及 → the" },
+          { type:"fill", prompt:"He goes to _______ gym every day.", blanks:1, answers:[["the"]], explanation:"特定のジム(いつものジム) → the" },
+          { type:"fill2", prompt:"_______ water is essential for _______ good health.", answers:[["なし"],["なし"]], explanation:"一般的な概念 → 無冠詞" },
+          { type:"fill3", prompt:"We had _______ meeting about _______ new project. _______ meeting lasted 2 hours.", answers:[["a"],["the","a"],["the","The"]], explanation:"初出 → a / 特定のプロジェクト → the / 2回目の言及 → the" },
+          { type:"fill3", prompt:"_______ quality of _______ food at that restaurant depends on _______ freshness of ingredients.", answers:[["the","The"],["the"],["the"]], explanation:"特定の質・食べ物・新鮮さ → すべて the" },
+          { type:"fill2", prompt:"Can you send me _______ email about _______ party we discussed?", answers:[["an"],["the"]], explanation:"不特定のメール → an / 話題に出たパーティー → the" },
+          { type:"fill2", prompt:"She plays _______ piano and also likes _______ swimming.", answers:[["the"],["なし"]], explanation:"楽器 → the / スポーツ → 無冠詞" },
+          { type:"fill2", prompt:"I usually have _______ coffee for _______ breakfast.", answers:[["なし"],["なし"]], explanation:"不可算名詞の一般的な言及 → 無冠詞 / 食事名 → 無冠詞" },
+        ]
+      }
+    ]
+  },
+  // WEEK 5
+  {
+    week: 5,
+    title: "前置詞 + 不定詞 vs 動名詞",
+    sections: [
+      {
+        id: "w5s1",
+        title: "練習問題 5-1",
+        subtitle: "前置詞",
+        questions: [
+          { type:"fill2", prompt:"The meeting starts _______ 10am _______ Monday.", answers:[["at"],["on"]], explanation:"時刻 → at / 曜日 → on" },
+          { type:"fill", prompt:"We need to finish the report _______ Friday.", blanks:1, answers:[["by"]], explanation:"期限「〜までに」→ by" },
+          { type:"fill", prompt:"I've been working here _______ April.", blanks:1, answers:[["since"]], explanation:"起点「〜以来」→ since" },
+          { type:"fill", prompt:"The movie lasted _______ 3 hours.", blanks:1, answers:[["for"]], explanation:"期間「〜の間」→ for" },
+          { type:"fill", prompt:"_______ the lunch break, she went for a walk.", blanks:1, answers:[["During"]], explanation:"「〜の間に」→ During" },
+          { type:"fill", prompt:"The milk is _______ the fridge.", blanks:1, answers:[["in"]], explanation:"内部 → in" },
+          { type:"fill", prompt:"The results are displayed _______ the screen.", blanks:1, answers:[["on"]], explanation:"表面上 → on" },
+          { type:"fill", prompt:"We met _______ the café near the station.", blanks:1, answers:[["at"]], explanation:"地点 → at" },
+          { type:"fill", prompt:"Your score depends _______ how much you study.", blanks:1, answers:[["on"]], explanation:"depend on 〜" },
+          { type:"fill", prompt:"The team consists _______ five designers and two writers.", blanks:1, answers:[["of"]], explanation:"consist of 〜" },
+          { type:"fill", prompt:"The cancellation was due _______ bad weather.", blanks:1, answers:[["to"]], explanation:"due to 〜" },
+          { type:"fill2", prompt:"_______ terms _______ price, restaurant A is cheaper.", answers:[["In","in"],["of"]], explanation:"In terms of 〜「〜の観点から」" },
+          { type:"fill", prompt:"Eating too much sugar leads _______ health problems.", blanks:1, answers:[["to"]], explanation:"lead to 〜" },
+          { type:"fill", prompt:"She took the stairs instead _______ the elevator.", blanks:1, answers:[["of"]], explanation:"instead of 〜" },
+          { type:"fill", prompt:"According _______ the news, the train service is delayed.", blanks:1, answers:[["to"]], explanation:"according to 〜" },
+        ]
+      },
+      {
+        id: "w5s2",
+        title: "練習問題 5-2a",
+        subtitle: "to do / -ing",
+        questions: [
+          { type:"fill", prompt:"I want _______ (learn) more about photography.", blanks:1, answers:[["to learn"]], explanation:"want + to do" },
+          { type:"fill", prompt:"She enjoys _______ (run) in the morning.", blanks:1, answers:[["running"]], explanation:"enjoy + -ing" },
+          { type:"fill", prompt:"We decided _______ (take) a vacation in August.", blanks:1, answers:[["to take"]], explanation:"decide + to do" },
+          { type:"fill", prompt:"Avoid _______ (skip) breakfast on workdays.", blanks:1, answers:[["skipping"]], explanation:"avoid + -ing" },
+          { type:"fill", prompt:"I need _______ (check) the schedule before the meeting.", blanks:1, answers:[["to check"]], explanation:"need + to do" },
+          { type:"fill", prompt:"Consider _______ (try) a different gym.", blanks:1, answers:[["trying"]], explanation:"consider + -ing" },
+          { type:"fill", prompt:"He finished _______ (pack) his suitcase.", blanks:1, answers:[["packing"]], explanation:"finish + -ing" },
+          { type:"fill", prompt:"They agreed _______ (help) with the party preparations.", blanks:1, answers:[["to help"]], explanation:"agree + to do" },
+        ]
+      },
+      {
+        id: "w5s3",
+        title: "練習問題 5-2b",
+        subtitle: "意味の違い — 正しい日本語訳を選びなさい。",
+        questions: [
+          { type:"choice", prompt:"I stopped to drink some water.", choices:["水を飲むために立ち止まった","水を飲むのをやめた"], answer:0, explanation:"stop to do = 〜するために立ち止まる" },
+          { type:"choice", prompt:"I stopped drinking soda.", choices:["炭酸飲料を飲むために立ち止まった","炭酸飲料を飲むのをやめた"], answer:1, explanation:"stop -ing = 〜するのをやめる" },
+          { type:"choice", prompt:"Remember to lock the door before leaving.", choices:["出かける前に忘れずにドアの鍵をかけて","ドアの鍵をかけたことを覚えている"], answer:0, explanation:"remember to do = 忘れずに〜する" },
+          { type:"choice", prompt:"I remember locking the door this morning.", choices:["忘れずに今朝ドアの鍵をかけた","今朝ドアの鍵をかけたことを覚えている"], answer:1, explanation:"remember -ing = 〜したことを覚えている" },
+          { type:"choice", prompt:"Try to finish the report by tonight.", choices:["今夜までにレポートを終わらせようと努力して","試しにレポートを今夜までに終わらせてみて"], answer:0, explanation:"try to do = 〜しようと努力する" },
+          { type:"choice", prompt:"Try adding more salt to the soup.", choices:["スープに塩を加えようと努力して","試しにスープに塩をもう少し加えてみて"], answer:1, explanation:"try -ing = 試しに〜してみる" },
+        ]
+      },
+      {
+        id: "w5s4",
+        title: "練習問題 5-2c",
+        subtitle: "前置詞 + -ing",
+        questions: [
+          { type:"fill2", prompt:"I'm interested _______ _______ (travel) to South America.", answers:[["in"],["traveling","travelling"]], explanation:"be interested in -ing" },
+          { type:"fill2", prompt:"She's good _______ _______ (organize) events.", answers:[["at"],["organizing"]], explanation:"be good at -ing" },
+          { type:"fill2", prompt:"Thank you _______ _______ (carry) my bags.", answers:[["for"],["carrying"]], explanation:"thank you for -ing" },
+          { type:"fill2", prompt:"I'm looking forward _______ _______ (visit) you next month.", answers:[["to"],["visiting"]], explanation:"look forward to -ing (この to は前置詞)" },
+        ]
+      }
+    ]
+  },
+  // WEEK 6
+  {
+    week: 6,
+    title: "接続詞 + 総復習",
+    sections: [
+      {
+        id: "w6s1",
+        title: "練習問題 6-1",
+        subtitle: "接続詞 — 正しい方を選びなさい。",
+        questions: [
+          { type:"choice", prompt:"(_______ ) the hike took 5 hours, the view from the top was worth it.", choices:["Although","Despite"], answer:0, explanation:"後に文(SV)が来る → Although" },
+          { type:"choice", prompt:"(_______ ) the heavy rain, the outdoor concert continued.", choices:["Although","Despite"], answer:1, explanation:"後に名詞句が来る → Despite" },
+          { type:"choice", prompt:"The hotel was nice. (_______ ), the breakfast was disappointing.", choices:["However","Although"], answer:0, explanation:"文と文を繋ぐ副詞 → However" },
+          { type:"choice", prompt:"We missed the bus (_______ ) we left the house too late.", choices:["because","because of"], answer:0, explanation:"後に文(SV)が来る → because" },
+          { type:"choice", prompt:"We missed the bus (_______ ) the heavy snow.", choices:["because","because of"], answer:1, explanation:"後に名詞句が来る → because of" },
+          { type:"choice", prompt:"She got a promotion. (_______ ), she decided to celebrate.", choices:["Therefore","Because"], answer:0, explanation:"結果を述べる → Therefore" },
+          { type:"choice", prompt:"(_______ ) the gym is nearby, the swimming pool is across town.", choices:["While","However"], answer:0, explanation:"対比の接続詞 → While" },
+          { type:"choice", prompt:"The apartment is affordable. (_______ ), it is close to the station.", choices:["In addition","In contrast"], answer:0, explanation:"追加情報 → In addition" },
+        ]
+      },
+      {
+        id: "w6s2",
+        title: "練習問題 6-1b",
+        subtitle: "書き換え — 模範解答を確認しましょう。",
+        questions: [
+          { type:"free", prompt:"Although the exam was difficult, she passed with a high score. → Despite を使って書き換え:", model:"Despite the exam being difficult, she passed with a high score." },
+          { type:"free", prompt:"Because of the bad weather, we cancelled the barbecue. → Because を使って書き換え:", model:"Because the weather was bad, we cancelled the barbecue." },
+          { type:"free", prompt:"The room is small. However, the rent is very reasonable. → Although を使って1文に:", model:"Although the room is small, the rent is very reasonable." },
+        ]
+      },
+      {
+        id: "w6s3",
+        title: "練習問題 6-2 Part A",
+        subtitle: "総復習 — 空欄補充",
+        questions: [
+          { type:"fill", prompt:"I _______ (work) on this project since last month.", blanks:1, answers:[["have been working"]], explanation:"since → 継続中の動作 → 現在完了進行形" },
+          { type:"fill", prompt:"By the time the guests arrived, she _______ (already / finish) cooking.", blanks:1, answers:[["had already finished"]], explanation:"過去完了: ゲストが着く前に終わっていた" },
+          { type:"fill2", prompt:"If we _______ (have) a bigger kitchen, we _______ (cook) more often.", answers:[["had"],["would cook"]], explanation:"仮定法過去" },
+          { type:"fill", prompt:"The café, _______ was opened last year, serves excellent pastries.", blanks:1, answers:[["which"]], explanation:"非制限用法 → which" },
+          { type:"fill", prompt:"Running outside is _______ (enjoyable) than using a treadmill.", blanks:1, answers:[["more enjoyable"]], explanation:"長い形容詞の比較級 → more + 原級" },
+          { type:"fill2", prompt:"The report _______ (write) by my colleague and _______ (review) by the manager.", answers:[["was written"],["reviewed"]], explanation:"受動態(過去)" },
+          { type:"fill", prompt:"We need _______ (book) the tickets before Friday.", blanks:1, answers:[["to book"]], explanation:"need + to do" },
+          { type:"fill", prompt:"I enjoy _______ (try) new recipes on weekends.", blanks:1, answers:[["trying"]], explanation:"enjoy + -ing" },
+          { type:"fill", prompt:"_______ (finish) dinner, we went for a walk in the park.", blanks:1, answers:[["Having finished"]], explanation:"分詞構文(完了形): 先に夕食を終えた" },
+          { type:"fill", prompt:"The flight delay was due _______ strong winds.", blanks:1, answers:[["to"]], explanation:"due to 〜" },
+        ]
+      },
+      {
+        id: "w6s4",
+        title: "練習問題 6-2 Part B",
+        subtitle: "誤文訂正 — 正しい形を選びなさい。",
+        questions: [
+          { type:"choice", prompt:"I have finished the report yesterday. → 正しくは:", choices:["finished (yesterdayがあるので過去形)","have been finishing"], answer:0, explanation:"yesterday → 過去の特定時点なので過去形。" },
+          { type:"choice", prompt:"If I was you, I would choose the window seat. → 正しくは:", choices:["were (仮定法は were)","had been"], answer:0, explanation:"仮定法では be動詞は were を使う。" },
+          { type:"choice", prompt:"The chef which made this dish is very talented. → 正しくは:", choices:["who (人は who)","whom"], answer:0, explanation:"人を先行詞とする主格 → who" },
+          { type:"choice", prompt:"This cake is more better than the one we had last time. → 正しくは:", choices:["better (better は既に比較級)","most better"], answer:0, explanation:"better はすでに比較級。more は不要。" },
+          { type:"choice", prompt:"Despite it was raining, we went for a jog. → 正しくは:", choices:["Although (despite の後に文は不可)","Despite of"], answer:0, explanation:"despite の後には名詞句。文が来るなら although。" },
+          { type:"choice", prompt:"I want learning how to play the guitar. → 正しくは:", choices:["to learn (want + to do)","to learning"], answer:0, explanation:"want + to do が正しい形。" },
+          { type:"choice", prompt:"She has been reading 3 books this month. → 正しくは:", choices:["has read (回数=結果 → 現在完了)","had been reading"], answer:0, explanation:"回数・結果 → 現在完了。進行形は不適切。" },
+          { type:"choice", prompt:"I remember to send the email last night. → 正しくは:", choices:["sending (過去のことを覚えている → -ing)","to have sent"], answer:0, explanation:"過去にしたことを覚えている → remember -ing" },
+          { type:"choice", prompt:"The park is not as bigger as I expected. → 正しくは:", choices:["big (as...as の間は原級)","biggest"], answer:0, explanation:"as...as の間は原級を使う。" },
+          { type:"choice", prompt:"He stopped to smoke last year. → 正しくは:", choices:["smoking (吸うのをやめた → -ing)","to have smoked"], answer:0, explanation:"やめた → stop -ing" },
+        ]
+      }
+    ]
+  }
+];
+
+// ========== RENDER ==========
+const tabsEl = document.getElementById('tabs');
+const appEl = document.getElementById('app');
+
+function norm(s) { return s.trim().toLowerCase().replace(/\s+/g,' '); }
+
+function checkAnswer(userVal, acceptedList) {
+  const u = norm(userVal);
+  return acceptedList.some(a => norm(a) === u);
+}
+
+// Build tabs
+DATA.forEach((w, wi) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (wi === 0 ? ' active' : '');
+  btn.dataset.week = wi;
+  btn.innerHTML = `Week ${w.week}<span class="check-dot" id="dot-${wi}" style="display:none"></span>`;
+  btn.onclick = () => switchWeek(wi);
+  tabsEl.appendChild(btn);
+});
+
+// Build pages
+DATA.forEach((w, wi) => {
+  const page = document.createElement('div');
+  page.className = 'week-page' + (wi === 0 ? ' active' : '');
+  page.id = `week-${wi}`;
+
+  let html = `<h2 style="font-size:1.15rem;margin:12px 0 16px;color:#333;">Week ${w.week}: ${w.title}</h2>`;
+
+  w.sections.forEach((sec, si) => {
+    html += `<div class="section-card" id="${sec.id}">`;
+    html += `<h2>${sec.title}</h2><h3>${sec.subtitle}</h3>`;
+
+    sec.questions.forEach((q, qi) => {
+      const qid = `${sec.id}_q${qi}`;
+      html += `<div class="question" id="${qid}_wrap">`;
+      html += `<div class="q-text"><span class="q-num">${qi+1}.</span> ${escHtml(q.prompt)}</div>`;
+
+      if (q.type === 'fill') {
+        html += `<div class="input-row"><input type="text" id="${qid}_0" autocomplete="off" autocapitalize="off"> <span class="result-icon" id="${qid}_icon"></span></div>`;
+        html += `<div class="correct-answer" id="${qid}_ca"></div>`;
+        html += `<div class="explanation" id="${qid}_exp">${escHtml(q.explanation || '')}</div>`;
+      } else if (q.type === 'fill2') {
+        html += `<div class="input-row"><input type="text" id="${qid}_0" autocomplete="off" autocapitalize="off" placeholder="1つ目"> <input type="text" id="${qid}_1" autocomplete="off" autocapitalize="off" placeholder="2つ目"> <span class="result-icon" id="${qid}_icon"></span></div>`;
+        html += `<div class="correct-answer" id="${qid}_ca"></div>`;
+        html += `<div class="explanation" id="${qid}_exp">${escHtml(q.explanation || '')}</div>`;
+      } else if (q.type === 'fill3') {
+        html += `<div class="input-row"><input type="text" id="${qid}_0" autocomplete="off" autocapitalize="off" placeholder="1つ目"> <input type="text" id="${qid}_1" autocomplete="off" autocapitalize="off" placeholder="2つ目"> <input type="text" id="${qid}_2" autocomplete="off" autocapitalize="off" placeholder="3つ目"> <span class="result-icon" id="${qid}_icon"></span></div>`;
+        html += `<div class="correct-answer" id="${qid}_ca"></div>`;
+        html += `<div class="explanation" id="${qid}_exp">${escHtml(q.explanation || '')}</div>`;
+      } else if (q.type === 'choice') {
+        html += `<div class="radio-group" id="${qid}_rg">`;
+        q.choices.forEach((c, ci) => {
+          html += `<label id="${qid}_lbl${ci}"><input type="radio" name="${qid}" value="${ci}"> ${escHtml(c)}</label>`;
+        });
+        html += `</div>`;
+        html += `<span class="result-icon" id="${qid}_icon"></span>`;
+        html += `<div class="correct-answer" id="${qid}_ca"></div>`;
+        html += `<div class="explanation" id="${qid}_exp">${escHtml(q.explanation || '')}</div>`;
+      } else if (q.type === 'free') {
+        html += `<textarea class="answer-area" id="${qid}_0" placeholder="ここに回答を入力..."></textarea>`;
+        html += `<div class="freetext-model" id="${qid}_model"><strong>模範解答:</strong> ${escHtml(q.model)}</div>`;
+      }
+
+      html += `</div>`;
+    });
+
+    html += `<div class="btn-row">`;
+    html += `<button class="btn btn-grade" onclick="grade('${sec.id}',${wi},${si})">採点する</button>`;
+    html += `<button class="btn btn-reset" onclick="resetSection('${sec.id}',${wi},${si})">リセット</button>`;
+    html += `</div>`;
+    html += `<div class="score-display" id="${sec.id}_score"></div>`;
+    html += `</div>`;
+  });
+
+  page.innerHTML = html;
+  appEl.appendChild(page);
+});
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function switchWeek(wi) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===wi));
+  document.querySelectorAll('.week-page').forEach((p,i) => p.classList.toggle('active', i===wi));
+}
+
+function grade(secId, wi, si) {
+  const sec = DATA[wi].sections[si];
+  let correct = 0;
+  let total = 0;
+
+  sec.questions.forEach((q, qi) => {
+    const qid = `${secId}_q${qi}`;
+
+    if (q.type === 'free') {
+      // Just show model answer
+      const modelEl = document.getElementById(`${qid}_model`);
+      if (modelEl) modelEl.classList.add('show');
+      return;
+    }
+
+    total++;
+    let isCorrect = false;
+
+    if (q.type === 'fill') {
+      const inp = document.getElementById(`${qid}_0`);
+      isCorrect = checkAnswer(inp.value, q.answers[0]);
+      inp.classList.remove('correct','wrong');
+      inp.classList.add(isCorrect ? 'correct' : 'wrong');
+    } else if (q.type === 'fill2') {
+      const inp0 = document.getElementById(`${qid}_0`);
+      const inp1 = document.getElementById(`${qid}_1`);
+      const c0 = checkAnswer(inp0.value, q.answers[0]);
+      const c1 = checkAnswer(inp1.value, q.answers[1]);
+      isCorrect = c0 && c1;
+      inp0.classList.remove('correct','wrong'); inp0.classList.add(c0?'correct':'wrong');
+      inp1.classList.remove('correct','wrong'); inp1.classList.add(c1?'correct':'wrong');
+    } else if (q.type === 'fill3') {
+      const inp0 = document.getElementById(`${qid}_0`);
+      const inp1 = document.getElementById(`${qid}_1`);
+      const inp2 = document.getElementById(`${qid}_2`);
+      const c0 = checkAnswer(inp0.value, q.answers[0]);
+      const c1 = checkAnswer(inp1.value, q.answers[1]);
+      const c2 = checkAnswer(inp2.value, q.answers[2]);
+      isCorrect = c0 && c1 && c2;
+      inp0.classList.remove('correct','wrong'); inp0.classList.add(c0?'correct':'wrong');
+      inp1.classList.remove('correct','wrong'); inp1.classList.add(c1?'correct':'wrong');
+      inp2.classList.remove('correct','wrong'); inp2.classList.add(c2?'correct':'wrong');
+    } else if (q.type === 'choice') {
+      const sel = document.querySelector(`input[name="${qid}"]:checked`);
+      const val = sel ? parseInt(sel.value) : -1;
+      isCorrect = val === q.answer;
+      // highlight labels
+      q.choices.forEach((_, ci) => {
+        const lbl = document.getElementById(`${qid}_lbl${ci}`);
+        lbl.classList.remove('correct-choice','wrong-choice');
+        if (ci === q.answer) lbl.classList.add('correct-choice');
+        else if (ci === val && !isCorrect) lbl.classList.add('wrong-choice');
+      });
+    }
+
+    if (isCorrect) correct++;
+
+    // icon
+    const icon = document.getElementById(`${qid}_icon`);
+    icon.innerHTML = isCorrect ? '&#x2705;' : '&#x274C;';
+    icon.classList.add('show');
+
+    // correct answer + explanation for wrong
+    const caEl = document.getElementById(`${qid}_ca`);
+    const expEl = document.getElementById(`${qid}_exp`);
+    if (!isCorrect) {
+      if (q.type === 'fill') {
+        caEl.textContent = `正解: ${q.answers[0][0]}`;
+      } else if (q.type === 'fill2') {
+        caEl.textContent = `正解: ${q.answers[0][0]} / ${q.answers[1][0]}`;
+      } else if (q.type === 'fill3') {
+        caEl.textContent = `正解: ${q.answers[0][0]} / ${q.answers[1][0]} / ${q.answers[2][0]}`;
+      } else if (q.type === 'choice') {
+        caEl.textContent = `正解: ${q.choices[q.answer]}`;
+      }
+      caEl.classList.add('show');
+      expEl.classList.add('show');
+    } else {
+      caEl.classList.remove('show');
+      expEl.classList.remove('show');
+    }
+  });
+
+  // score
+  const scoreEl = document.getElementById(`${secId}_score`);
+  if (total > 0) {
+    scoreEl.textContent = `${correct} / ${total} 正解`;
+    scoreEl.className = 'score-display show';
+    const pct = correct / total;
+    if (pct === 1) scoreEl.classList.add('perfect');
+    else if (pct >= 0.6) scoreEl.classList.add('good');
+    else scoreEl.classList.add('needs-work');
+  }
+
+  saveProgress(wi, si, correct, total);
+}
+
+function resetSection(secId, wi, si) {
+  const sec = DATA[wi].sections[si];
+  sec.questions.forEach((q, qi) => {
+    const qid = `${secId}_q${qi}`;
+    if (q.type === 'fill') {
+      const inp = document.getElementById(`${qid}_0`);
+      inp.value = ''; inp.classList.remove('correct','wrong');
+    } else if (q.type === 'fill2') {
+      [0,1].forEach(i => { const inp = document.getElementById(`${qid}_${i}`); inp.value=''; inp.classList.remove('correct','wrong'); });
+    } else if (q.type === 'fill3') {
+      [0,1,2].forEach(i => { const inp = document.getElementById(`${qid}_${i}`); inp.value=''; inp.classList.remove('correct','wrong'); });
+    } else if (q.type === 'choice') {
+      const sel = document.querySelector(`input[name="${qid}"]:checked`);
+      if (sel) sel.checked = false;
+      const sec2 = DATA[wi].sections[si];
+      sec2.questions[qi].choices.forEach((_, ci) => {
+        document.getElementById(`${qid}_lbl${ci}`).classList.remove('correct-choice','wrong-choice');
+      });
+    } else if (q.type === 'free') {
+      const ta = document.getElementById(`${qid}_0`);
+      if (ta) ta.value = '';
+      const m = document.getElementById(`${qid}_model`);
+      if (m) m.classList.remove('show');
+    }
+    const icon = document.getElementById(`${qid}_icon`);
+    if (icon) { icon.classList.remove('show'); icon.innerHTML = ''; }
+    const ca = document.getElementById(`${qid}_ca`);
+    if (ca) ca.classList.remove('show');
+    const exp = document.getElementById(`${qid}_exp`);
+    if (exp) exp.classList.remove('show');
+  });
+  const scoreEl = document.getElementById(`${secId}_score`);
+  scoreEl.className = 'score-display';
+  scoreEl.textContent = '';
+
+  // Remove progress for this section
+  let prog = JSON.parse(localStorage.getItem('engquiz_progress') || '{}');
+  delete prog[`${wi}_${si}`];
+  localStorage.setItem('engquiz_progress', JSON.stringify(prog));
+  updateProgressBar();
+}
+
+// ========== PROGRESS ==========
+function saveProgress(wi, si, correct, total) {
+  let prog = JSON.parse(localStorage.getItem('engquiz_progress') || '{}');
+  prog[`${wi}_${si}`] = { correct, total };
+  localStorage.setItem('engquiz_progress', JSON.stringify(prog));
+  updateProgressBar();
+}
+
+function updateProgressBar() {
+  let prog = JSON.parse(localStorage.getItem('engquiz_progress') || '{}');
+  let completedWeeks = 0;
+
+  DATA.forEach((w, wi) => {
+    // A week is complete if all graded sections have been attempted
+    const gradedSections = w.sections.filter(s => s.questions.some(q => q.type !== 'free'));
+    const allDone = gradedSections.every((s, si) => {
+      const actualSi = w.sections.indexOf(s);
+      return prog[`${wi}_${actualSi}`] !== undefined;
+    });
+    const dot = document.getElementById(`dot-${wi}`);
+    if (allDone && gradedSections.length > 0) {
+      completedWeeks++;
+      dot.style.display = 'inline-block';
+    } else {
+      dot.style.display = 'none';
+    }
+  });
+
+  document.getElementById('progressText').textContent = `進捗: ${completedWeeks} / 6 週 完了`;
+  document.getElementById('progressFill').style.width = `${(completedWeeks/6)*100}%`;
+}
+
+updateProgressBar();
+</script>
+</body>
+</html>

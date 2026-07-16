@@ -8,4 +8,7 @@
 - **Business**: 会議・議論で使うフレーズ
 
 ## Index
-<!-- カテゴリごとにファイル追加 -->
+- **Daily**
+  1 相手の話が怖いとき -> That's scary,  自分が怖いとき -> I'm scared.
+- **Technical**: semiconductor / chip design / AI 関連用語
+- **Business**: 会議・議論で使うフレーズ
